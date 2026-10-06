@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIPH54 — Emploi & Recrutement</title>
+<link rel="icon" type="image/jpeg" href="/home/emilien/Téléchargements/aiph/images.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="/home/emilien/Téléchargements/aiph/logo aiph.png" alt="AIPH54 Logo" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="aiph.html">L'AIPH</a></li>
+    <li><a href="prestations.html">Prestations</a></li>
+    <li><a href="emploi.html" class="active">Emploi</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Accueil</a>
+  <a href="aiph.html" onclick="closeMobile()">L'AIPH</a>
+  <a href="prestations.html" onclick="closeMobile()">Prestations</a>
+  <a href="emploi.html" onclick="closeMobile()">Emploi</a>
+  <a href="contact.html" onclick="closeMobile()" style="color:var(--forest);font-weight:600">Contact</a>
+</div>
+
+<!-- ═══════════ PAGE WRAP ═══════════ -->
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="emploi-hero">
+    <div class="container">
+      <div class="tag">Recrutement</div>
+      <h1 class="display-title" style="margin:1rem 0">
+        Nous recrutons<br>
+        <em>en continu.</em>
+      </h1>
+      <p class="lead">Rejoignez une équipe qui agit chaque jour pour offrir une seconde chance à ceux qui en ont besoin. L'AIPH cherche des personnes motivées, quelle que soit leur situation.</p>
+    </div>
+  </div>
+
+  <!-- Conditions + Vidéo -->
+  <section class="section">
+    <div class="container">
+      <div class="about-split" style="align-items:stretch">
+
+        <!-- ── Colonne gauche : conditions + ce que nous offrons ── -->
+        <div class="fade-up" style="display:flex;flex-direction:column">
+          <div class="tag">Conditions d'accès</div>
+          <h2 class="section-title">Qui peut postuler ?</h2>
+          <p style="color:var(--warm-gray);line-height:1.75">
+            En tant qu'organisme agréé par différentes entités, les candidats nous rejoignant peuvent bénéficier d'un accompagnement de deux ans et se voir proposer un travail via lequel ils pourront retrouver le milieu professionnel.
+          </p>
+          <p style="color:var(--warm-gray);line-height:1.75">
+            Si vous bénéficiez du RSA, de l'AME, de l'AAH ou que cela fait plus de deux ans que vous êtes éloigné(e) de l'emploi, vous êtes éligible. N'hésitez pas à nous contacter pour faire le point — nous déterminerons ensemble la faisabilité d'un parcours.
+          </p>
+
+          <!-- Card : postuler si -->
+          <div class="emploi-conditions">
+            <h3>Vous pouvez postuler si vous :</h3>
+            <ul class="cond-list">
+              <li><div class="cond-check">✓</div>Bénéficiez du RSA, de l'AAH ou de l'AME</li>
+              <li><div class="cond-check">✓</div>Êtes éloigné(e) de l'emploi depuis plus de 2 ans</li>
+              <li><div class="cond-check">✓</div>Êtes inscrit(e) à France Travail (Pôle Emploi)</li>
+              <li><div class="cond-check">✓</div>Avez un niveau CAP/BEP ou équivalent dans un domaine concerné</li>
+              <li><div class="cond-check">✓</div>Êtes motivé(e) à reprendre une activité professionnelle</li>
+            </ul>
+          </div>
+
+          <!-- Card : ce que nous offrons -->
+          <div style="background:var(--forest-pale);border:1px solid rgba(45,90,39,0.15);border-radius:16px;padding:1.75rem">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:1rem">Ce que nous offrons</h3>
+            <ul class="cond-list">
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Des missions variées pour monter en compétences</li>
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Un suivi personnalisé par un référent emploi</li>
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Une attestation d'expérience valorisable</li>
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Un tremplin vers un emploi durable</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── Colonne droite : vidéo + ce que vous allez découvrir ── -->
+        <div class="fade-up" style="transition-delay:0.1s">
+          <div style="background:var(--ink);border-radius:20px;padding:2.5rem;color:var(--cream);position:relative;overflow:hidden;height:100%;display:flex;flex-direction:column;justify-content:space-between">
+
+            <div>
+              <div class="tag" style="background:rgba(255,255,255,0.08);color:rgba(250,248,244,0.65)">Vidéo de présentation</div>
+              <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin:1rem 0 0.75rem;color:var(--cream)">Découvrez l'AIPH en vidéo</h3>
+              <p style="font-size:0.875rem;opacity:0.6;line-height:1.65;margin-bottom:1.5rem">Notre équipe vous présente l'association, les missions disponibles et le parcours d'accompagnement que nous proposons.</p>
+              <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;overflow:hidden;aspect-ratio:16/9">
+                <video
+                  src="/home/emilien/Téléchargements/Vidéo explication salariés.mp4"
+                  controls
+                  poster="home/emilien/Téléchargements/Vidéo explication salariés.jpg?v=2"
+                  style="width:100%;height:100%;object-fit:cover;display:block;">
+                  Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+                </video>
+              </div>
+            </div>
+
+            <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1)">
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(250,248,244,0.45);margin-bottom:1rem">Ce que vous allez découvrir</h4>
+              <ul class="cond-list">
+                <li style="color:rgba(250,248,244,0.8)"><div class="cond-check" style="background:var(--forest-mid)">✓</div>Qui est l'AIPH et ses missions au quotidien</li>
+                <li style="color:rgba(250,248,244,0.8)"><div class="cond-check" style="background:var(--forest-mid)">✓</div>Les types de postes proposés aux salariés</li>
+                <li style="color:rgba(250,248,244,0.8)"><div class="cond-check" style="background:var(--forest-mid)">✓</div>Le parcours d'accompagnement sur 2 ans</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Missions -->
+  <section class="section" style="background:var(--stone);border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="tag">Missions proposées</div>
+      <h2 class="section-title" style="margin-bottom:0.5rem">Postes disponibles</h2>
+      <p class="lead" style="margin-bottom:0">Nos missions évoluent régulièrement. Contactez-nous pour la liste complète actualisée.</p>
+      <div class="jobs-grid">
+        <div class="job-card fade-up">
+          <span class="job-type">Espaces Verts</span>
+          <h3>Ouvrier des Espaces Verts</h3>
+          <p>Maintenance des outils d'espaces verts : tondeuse, débroussailleuse, souffleur. Permis B préféré.</p>
+          <div class="job-footer">
+            <span>Temps partiel / modulable</span>
+            <a class="job-apply" href="contact.html">Postuler →</a>
+          </div>
+        </div>
+        <div class="job-card fade-up" style="transition-delay:0.06s">
+          <span class="job-type">Nettoyage</span>
+          <h3>Agent de Nettoyage</h3>
+          <p>Connaissance des produits et procédés, rigueur et minutie. Travail d'équipe possible. Permis B préféré.</p>
+          <div class="job-footer">
+            <span>Temps partiel / modulable</span>
+            <a class="job-apply" href="contact.html">Postuler →</a>
+          </div>
+        </div>
+        <div class="job-card fade-up" style="transition-delay:0.12s">
+          <span class="job-type">Manutention</span>
+          <h3>Manœuvre Manutention</h3>
+          <p>Port de charges lourdes, bonne condition physique, soin aux objets et au travail. Permis B recommandé.</p>
+          <div class="job-footer">
+            <span>Temps partiel / modulable</span>
+            <a class="job-apply" href="contact.html">Postuler →</a>
+          </div>
+        </div>
+        <div class="job-card fade-up" style="transition-delay:0.18s">
+          <span class="job-type">BTP / Maçon</span>
+          <h3>Manœuvre BTP / Maçon</h3>
+          <p>Connaissance des produits et matériaux du bâtiment. Travail d'équipe. Permis B préféré.</p>
+          <div class="job-footer">
+            <span>Temps partiel / modulable</span>
+            <a class="job-apply" href="contact.html">Postuler →</a>
+          </div>
+        </div>
+        <div class="job-card fade-up" style="transition-delay:0.24s">
+          <span class="job-type">Encadrement</span>
+          <h3>Encadrant Enfants</h3>
+          <p>Expérience avec les enfants, Bafa et/ou autre certification préféré. Goût pour le périscolaire et l'ATSEM.</p>
+          <div class="job-footer">
+            <span>Temps partiel / modulable</span>
+            <a class="job-apply" href="contact.html">Postuler →</a>
+          </div>
+        </div>
+        <div class="job-card fade-up" style="background:var(--forest);border-color:var(--forest);cursor:default;transition-delay:0.3s">
+          <span class="job-type" style="background:rgba(255,255,255,0.15);color:rgba(250,248,244,0.8)">Candidature spontanée</span>
+          <h3 style="color:var(--cream)">Votre profil ne correspond pas ?</h3>
+          <p style="color:rgba(250,248,244,0.65)">Contactez-nous quand même. Nous étudions chaque situation individuellement et pouvons créer des opportunités adaptées.</p>
+          <div class="job-footer" style="border-top-color:rgba(255,255,255,0.15)">
+            <span style="color:rgba(250,248,244,0.5)">Toute l'année</span>
+            <a class="job-apply" style="color:var(--cream)" href="contact.html">Écrire →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div style="background:var(--forest-pale);border:1px solid rgba(45,90,39,0.15);border-radius:24px;padding:3.5rem;text-align:center">
+        <div class="tag">Candidature</div>
+        <h2 class="section-title" style="margin:0.75rem auto 1rem;max-width:500px">Prêt à rejoindre l'équipe ?</h2>
+        <p class="lead" style="margin:0 auto 2rem;text-align:center">Envoyez-nous votre candidature par e-mail ou via le formulaire de contact. Notre équipe vous répondra rapidement.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary" href="contact.html">Candidater maintenant →</a>
+          <a class="btn btn-outline" href="aiph.html">En savoir plus sur l'AIPH</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END PAGE WRAP -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <img src="/home/emilien/Téléchargements/aiph/logo aiph blanc.png" alt="AIPH54 Logo" class="logo-img-footer">
+          </a>
+        <p>Association Intermédiaire du Pays Haut — Structure d'insertion par l'activité économique, au service des habitants de Meurthe-et-Moselle depuis 2010.</p>
+        <div class="footer-socials">
+          <button class="social-btn" href="https://www.facebook.com/Associationaiph/" title="Facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="social-btn" href="https://www.instagram.com/aiph.54/" title="Instagram"><i class="fab fa-instagram"></i></button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="aiph.html">L'AIPH</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="emploi.html">Emploi</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="prestations.html">Espaces Verts</a></li>
+          <li><a href="prestations.html">Nettoyage</a></li>
+          <li><a href="prestations.html">Petits Travaux</a></li>
+          <li><a href="prestations.html">Débarras</a></li>
+          <li><a href="prestations.html">Encadrement Enfants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a><i class="far fa-envelope" style="margin-right: 8px;"></i>aiph54@hotmail.fr</a></li>
+          <li><a><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>09 82 55 57 07</a></li>
+          <li><a><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Villers-la-Montagne</a></li>
+          <li><a>54920, Meurthe-et-Moselle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AIPH54 — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

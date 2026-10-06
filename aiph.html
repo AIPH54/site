@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIPH54 — L'Association</title>
+<link rel="icon" type="image/jpeg" href="/home/emilien/Téléchargements/aiph/images.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="/home/emilien/Téléchargements/aiph/logo aiph.png" alt="AIPH54 Logo" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="aiph.html" class="active">L'AIPH</a></li>
+    <li><a href="prestations.html">Prestations</a></li>
+    <li><a href="emploi.html">Emploi</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Accueil</a>
+  <a href="aiph.html" onclick="closeMobile()">L'AIPH</a>
+  <a href="prestations.html" onclick="closeMobile()">Prestations</a>
+  <a href="emploi.html" onclick="closeMobile()">Emploi</a>
+  <a href="contact.html" onclick="closeMobile()" style="color:var(--forest);font-weight:600">Contact</a>
+</div>
+
+<!-- ═══════════ PAGE WRAP ═══════════ -->
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="aiph-hero">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="tag" style="background:rgba(255,255,255,0.1);color:rgba(250,248,244,0.7)">À propos de nous</div>
+      <h1 class="display-title" style="color:var(--cream);margin:1rem 0">
+        Une association<br>
+        au cœur du <em>Pays Haut</em>
+      </h1>
+      <p class="lead" style="color:rgba(250,248,244,0.6)">
+        L'AIPH — Association Intermédiaire du Pays Haut — est une structure d'insertion par l'activité économique, active depuis plus de vingt ans dans le nord de la Meurthe-et-Moselle.
+      </p>
+    </div>
+  </div>
+
+  <!-- Who -->
+  <section class="section">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-content fade-up">
+          <div class="tag">Qui sommes-nous ?</div>
+          <h2 class="section-title">Une structure conventionnée par l'État</h2>
+          <p>L'AIPH signifie <strong>Association Intermédiaire du Pays Haut</strong>. Nous faisons partie des structures d'insertion par l'activité économique dans la zone d'activité intense de Mont-Saint-Martin à Longuyon, jusqu'à Conflans et Villerupt, ainsi que toutes les communes assistantes.</p>
+          <p>Nous sommes une Association Intermédiaire, c'est-à-dire une structure conventionnée par l'État et le Département de Meurthe-et-Moselle, dont la mission est d'aider l'insertion professionnelle et sociale de personnes durablement éloignées de l'emploi.</p>
+          <p>Nous proposons des activités utiles à la collectivité : nos missions permettent de (re)prendre pied dans le milieu du travail, et de travailler sur leur projet professionnel pour trouver un emploi durable.</p>
+        </div>
+        <div class="timeline fade-up">
+          <div class="tag">Notre histoire</div>
+          <div style="height:0.5rem"></div>
+          <div class="timeline-item">
+            <div class="timeline-date">Fondation</div>
+            <h4>Création de l'AIPH</h4>
+            <p>Naissance de l'association dans le Pays Haut, réponse à un besoin local d'insertion professionnelle.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Développement</div>
+            <h4>Élargissement territorial</h4>
+            <p>Extension des activités de Mont-Saint-Martin à Longuyon et aux communes avoisinantes.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Consolidation</div>
+            <h4>Diversification des missions</h4>
+            <p>Ajout de l'encadrement d'enfants, des petits travaux et du débarras à nos offres de service.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Aujourd'hui</div>
+            <h4>+1 500 particuliers accompagnés</h4>
+            <p>L'AIPH est un acteur reconnu de l'insertion professionnelle dans le département 54.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section" style="background:var(--stone);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <div class="text-center">
+        <div class="tag">Nos valeurs</div>
+        <h2 class="section-title" style="margin-top:0.75rem">Ce qui nous guide au quotidien</h2>
+      </div>
+      <div class="team-values-grid">
+        <div class="team-value fade-up">
+          <span class="team-value-icon"><i class="fas fa-handshake icon-aiph"></i></span>
+          <h3>Solidarité</h3>
+          <p>Nous croyons au collectif et à l'entraide pour construire une société plus juste et inclusive.</p>
+        </div>
+        <div class="team-value fade-up" style="transition-delay:0.1s">
+          <span class="team-value-icon"><i class="fas fa-briefcase icon-aiph"></i></span>
+          <h3>Insertion</h3>
+          <p>Notre priorité est l'accompagnement vers l'emploi durable pour tous nos salariés en parcours.</p>
+        </div>
+        <div class="team-value fade-up" style="transition-delay:0.2s">
+          <span class="team-value-icon"><i class="fas fa-medal icon-aiph"></i></span>
+          <h3>Qualité</h3>
+          <p>Nous nous engageons à fournir des services professionnels répondant aux attentes de nos clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone d'action -->
+  <section class="section">
+    <div class="container">
+      <div class="about-split">
+        <div class="fade-up">
+          <div class="tag">Notre centre d'action</div>
+          <h2 class="section-title">Un territoire, des solutions</h2>
+          <p style="color:var(--warm-gray);line-height:1.75;font-size:0.95rem;margin:1rem 0">
+            Nous proposons des services à domicile pour tous, dans le secteur du Pays-Haut : entre Aflange et Réhon-Elly, Portières, entreprises, bailleurs, collectivités, associations, tous nous accompagnons dans les tâches du quotidien que vous ne souhaitez pas faire.
+          </p>
+          <p style="color:var(--warm-gray);line-height:1.75;font-size:0.95rem;margin-bottom:1.5rem">
+            Quel que soit votre besoin, notre équipe est là pour vous apporter une solution simple, efficace et adaptée à votre situation.
+          </p>
+          <a class="btn btn-primary" href="prestations.html">Voir nos prestations →</a>
+        </div>
+        <div class="action-zone fade-up">
+          <h3>Zone géographique</h3>
+          <p><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Siège : Villers-la-Montagne (54920)</p>
+          <p><i class="fas fa-map" style="margin-right: 8px;"></i> Couverture : Pays Haut, Meurthe-et-Moselle</p>
+          <p style="margin-bottom:1.5rem">De Mont-Saint-Martin à Longuyon, en passant par Longuyon, Villerupt et les communes avoisinantes. Nous intervenons auprès des particuliers, collectivités et entreprises du territoire.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+            <div style="background:var(--cream);border-radius:10px;padding:1rem;text-align:center;border:1px solid var(--border)">
+              <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--forest)">+25</div>
+              <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.2rem">Communes<br>couvertes</div>
+            </div>
+            <div style="background:var(--cream);border-radius:10px;padding:1rem;text-align:center;border:1px solid var(--border)">
+              <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--forest)">54</div>
+              <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.2rem">Meurthe-et-<br>Moselle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <div class="partners-strip">
+    <div class="container">
+      <p class="partners-title">Nos partenaires</p>
+      <div class="partners-logos">
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/departement.png" alt="Département Meurthe-et-Moselle"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/republique-francaise.png" alt="République Française"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/ddets.png" alt="La DDETS"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/france-travail.png" alt="France Travail"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/pimms.png" alt="Pimms Médiation"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/cidff.png" alt="CIDFF"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/valo.png" alt="VALO"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/cap-emploi.png" alt="CAP Emploi"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/aide-interim.png" alt="Aide Intérim"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/mission-locale.png" alt="Mission Locale"></div>
+        <div class="partner-logo"><img src="/home/emilien/Téléchargements/aiph/sineo.png" alt="Sineo"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+        <div style="background:var(--forest);border-radius:20px;padding:2.5rem;color:var(--cream)">
+          <div class="tag" style="background:rgba(255,255,255,0.1);color:rgba(250,248,244,0.7)">Recrutement</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin:0.75rem 0">Rejoindre l'équipe</h3>
+          <p style="font-size:0.875rem;opacity:0.7;line-height:1.65;margin-bottom:1.5rem">Vous êtes en recherche d'emploi ? Nous acceptons les candidatures toute l'année.</p>
+          <a class="btn btn-accent" href="emploi.html">Voir les missions →</a>
+        </div>
+        <div style="background:var(--stone);border:1px solid var(--border);border-radius:20px;padding:2.5rem">
+          <div class="tag">Prestations</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin:0.75rem 0">Faire appel à nos services</h3>
+          <p style="font-size:0.875rem;color:var(--warm-gray);line-height:1.65;margin-bottom:1.5rem">Particulier, collectivité ou entreprise — nous avons une solution adaptée à vos besoins.</p>
+          <a class="btn btn-primary" href="contact.html">Demander un devis →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END PAGE WRAP -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <img src="/home/emilien/Téléchargements/aiph/logo aiph blanc.png" alt="AIPH54 Logo" class="logo-img-footer">
+          </a>
+        <p>Association Intermédiaire du Pays Haut — Structure d'insertion par l'activité économique, au service des habitants de Meurthe-et-Moselle depuis 2010.</p>
+        <div class="footer-socials">
+          <button class="social-btn" href="https://www.facebook.com/Associationaiph/" title="Facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="social-btn" href="https://www.instagram.com/aiph.54/" title="Instagram"><i class="fab fa-instagram"></i></button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="aiph.html">L'AIPH</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="emploi.html">Emploi</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="prestations.html">Espaces Verts</a></li>
+          <li><a href="prestations.html">Nettoyage</a></li>
+          <li><a href="prestations.html">Petits Travaux</a></li>
+          <li><a href="prestations.html">Débarras</a></li>
+          <li><a href="prestations.html">Encadrement Enfants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a><i class="far fa-envelope" style="margin-right: 8px;"></i>aiph54@hotmail.fr</a></li>
+          <li><a><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>09 82 55 57 07</a></li>
+          <li><a><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Villers-la-Montagne</a></li>
+          <li><a>54920, Meurthe-et-Moselle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AIPH54 — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIPH54 — Contact</title>
+<link rel="icon" type="image/jpeg" href="/home/emilien/Téléchargements/aiph/images.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="/home/emilien/Téléchargements/aiph/logo aiph.png" alt="AIPH54 Logo" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="aiph.html">L'AIPH</a></li>
+    <li><a href="prestations.html">Prestations</a></li>
+    <li><a href="emploi.html">Emploi</a></li>
+    <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Accueil</a>
+  <a href="aiph.html" onclick="closeMobile()">L'AIPH</a>
+  <a href="prestations.html" onclick="closeMobile()">Prestations</a>
+  <a href="emploi.html" onclick="closeMobile()">Emploi</a>
+  <a href="contact.html" onclick="closeMobile()" style="color:var(--forest);font-weight:600">Contact</a>
+</div>
+
+<!-- ═══════════ PAGE WRAP ═══════════ -->
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="contact-hero">
+    <div class="container">
+      <div class="tag">Contact</div>
+      <h1 class="display-title" style="margin:1rem 0">
+        Parlons de<br>
+        <em>votre projet.</em>
+      </h1>
+      <p class="lead">Pour un devis, une candidature ou toute question — notre équipe vous répond du lundi au vendredi, de 9h à 12h et de 13h à 17h.</p>
+    </div>
+  </div>
+
+  <!-- Contact Layout -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Coordonnées -->
+        <div class="contact-info fade-up">
+          <h3>Nos coordonnées</h3>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="far fa-envelope"></i></div>
+              <div>
+                <div class="contact-item-label">E-mail</div>
+                <div class="contact-item-val">aiph54@hotmail.fr</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <div class="contact-item-label">Téléphone</div>
+                <div class="contact-item-val">09 82 55 57 07</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <div class="contact-item-label">Adresse</div>
+                <div class="contact-item-val">Rue de moulage</div>
+                <div class="contact-item-sub">54920 Villers-la-Montagne</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <div class="contact-item-label">Horaires</div>
+                <div class="contact-item-val">Lun – Ven</div>
+                <div class="contact-item-sub">8h–12h et 13h–17h</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map-placeholder">
+            <iframe 
+              class="contact-map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.6146818167376!2d5.849874976215522!3d49.472894857266525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47eacb6cc0da83bf%3A0x63e7a2e79bbd714e!2sAIPH!5e0!3m2!1sfr!2sfr!4v1781990536247!5m2!1sfr!2sfr" 
+              width="420" 
+              height="280" 
+              style="border:0; border-radius: 20px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Carte Google Maps - Villers-la-Montagne">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="contact-form fade-up" style="transition-delay:0.1s">
+          <h3>Envoyer un message</h3>
+          <p class="form-sub">Pour un devis ou pour candidater, remplissez le formulaire ci-dessous.</p>
+
+          <div id="formContent">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Prénom *</label>
+                <input type="text" id="f_prenom" placeholder="Votre prénom">
+              </div>
+              <div class="form-group">
+                <label>Nom *</label>
+                <input type="text" id="f_nom" placeholder="Votre nom">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>E-mail *</label>
+              <input type="email" id="f_email" placeholder="votre@email.fr">
+            </div>
+            <div class="form-group">
+              <label>Téléphone</label>
+              <input type="tel" id="f_tel" placeholder="06 00 00 00 00">
+            </div>
+            <div class="form-group">
+              <label>Objet *</label>
+              <select id="f_objet">
+                <option value="">Choisissez un objet...</option>
+                <option>Demande de devis – Particulier</option>
+                <option>Demande de devis – Collectivité</option>
+                <option>Demande de devis – Entreprise</option>
+                <option>Candidature</option>
+                <option>Renseignements généraux</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea id="f_msg" placeholder="Décrivez votre besoin ou votre situation..."></textarea>
+            </div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:0.95rem" onclick="submitForm()">Envoyer le message →</button>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon"><i class="fas fa-check" style="font-size:10rem"></i></div>
+            <h4>Message envoyé !</h4>
+            <p>Merci pour votre message. Notre équipe vous répondra dans les 24–48 heures ouvrées.</p>
+            <button class="btn btn-outline" style="margin-top:1.25rem" onclick="resetForm()">Envoyer un autre message</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ rapide -->
+  <section class="section" style="background:var(--stone);border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="tag">FAQ</div>
+      <h2 class="section-title" style="margin-bottom:2.5rem">Questions fréquentes</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+        <div style="background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.75rem">
+          <h4 style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.6rem">Comment obtenir un devis ?</h4>
+          <p style="font-size:0.875rem;color:var(--warm-gray);line-height:1.65">Remplissez le formulaire ci-dessus ou appelez-nous directement. Nous vous répondons sous 24–48h ouvrées.</p>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.75rem">
+          <h4 style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.6rem">Comment postuler à l'AIPH ?</h4>
+          <p style="font-size:0.875rem;color:var(--warm-gray);line-height:1.65">Envoyez votre candidature via le formulaire (objet : Candidature). Un entretien sera organisé si votre profil correspond.</p>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.75rem">
+          <h4 style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.6rem">Quelles zones d'intervention ?</h4>
+          <p style="font-size:0.875rem;color:var(--warm-gray);line-height:1.65">Pays Haut de Meurthe-et-Moselle : Mont-Saint-Martin, Longwy, Longuyon, Villers-la-Montagne et communes alentours.</p>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.75rem">
+          <h4 style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.6rem">Y a-t-il un avantage fiscal ?</h4>
+          <p style="font-size:0.875rem;color:var(--warm-gray);line-height:1.65">Oui, les particuliers employeurs peuvent bénéficier d'un crédit d'impôt sur les services à la personne. Contactez-nous pour en savoir plus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END PAGE WRAP -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <img src="/home/emilien/Téléchargements/aiph/logo aiph blanc.png" alt="AIPH54 Logo" class="logo-img-footer">
+          </a>
+        <p>Association Intermédiaire du Pays Haut — Structure d'insertion par l'activité économique, au service des habitants de Meurthe-et-Moselle depuis 2010.</p>
+        <div class="footer-socials">
+          <button class="social-btn" href="https://www.facebook.com/Associationaiph/" title="Facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="social-btn" href="https://www.instagram.com/aiph.54/" title="Instagram"><i class="fab fa-instagram"></i></button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="aiph.html">L'AIPH</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="emploi.html">Emploi</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="prestations.html">Espaces Verts</a></li>
+          <li><a href="prestations.html">Nettoyage</a></li>
+          <li><a href="prestations.html">Petits Travaux</a></li>
+          <li><a href="prestations.html">Débarras</a></li>
+          <li><a href="prestations.html">Encadrement Enfants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a><i class="far fa-envelope" style="margin-right: 8px;"></i>aiph54@hotmail.fr</a></li>
+          <li><a><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>09 82 55 57 07</a></li>
+          <li><a><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Villers-la-Montagne</a></li>
+          <li><a>54920, Meurthe-et-Moselle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AIPH54 — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

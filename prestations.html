@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIPH54 — Prestations</title>
+<link rel="icon" type="image/jpeg" href="/home/emilien/Téléchargements/aiph/images.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="/home/emilien/Téléchargements/aiph/logo aiph.png" alt="AIPH54 Logo" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="aiph.html">L'AIPH</a></li>
+    <li><a href="prestations.html" class="active">Prestations</a></li>
+    <li><a href="emploi.html">Emploi</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Accueil</a>
+  <a href="aiph.html" onclick="closeMobile()">L'AIPH</a>
+  <a href="prestations.html" onclick="closeMobile()">Prestations</a>
+  <a href="emploi.html" onclick="closeMobile()">Emploi</a>
+  <a href="contact.html" onclick="closeMobile()" style="color:var(--forest);font-weight:600">Contact</a>
+</div>
+
+<!-- ═══════════ PAGE WRAP ═══════════ -->
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="presta-hero">
+    <div class="container">
+      <div class="tag">Nos services</div>
+      <h1 class="display-title" style="margin:1rem 0">
+        Des prestations<br>
+        <em>pour tous.</em>
+      </h1>
+      <p class="lead">Particuliers, collectivités, entreprises — l'AIPH propose des services de qualité adaptés à chaque besoin, réalisés par nos équipes sur le territoire du Pays Haut.</p>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <section class="section">
+    <div class="container">
+      <div class="presta-tabs">
+        <button class="presta-tab active" data-panel="particuliers">Particuliers</button>
+        <button class="presta-tab" data-panel="collectivites">Collectivités</button>
+        <button class="presta-tab" data-panel="entreprises">Entreprises</button>
+      </div>
+
+      <!-- Particuliers -->
+      <div class="presta-panel active" id="panel-particuliers">
+        <div class="presta-info fade-up">
+          <div class="tag">Pour les particuliers</div>
+          <h2 class="section-title">À votre service, à domicile.</h2>
+          <p>Jardinage, ménage, bricolage, déménagement — nos salariés interviennent chez vous pour tous les travaux que vous ne souhaitez pas effectuer seul. Rapides, soigneux et professionnels.</p>
+          <p>Nos interventions permettent également à nos salariés de développer leurs compétences et de retrouver un rythme de travail régulier.</p>
+          <div class="presta-highlight">
+            <h3>Avantage fiscal</h3>
+            <p>En tant que particulier employeur passant par l'AIPH, vous pouvez bénéficier d'un crédit d'impôt ou d'une réduction fiscale sur les services à la personne.</p>
+            <a class="btn" href="contact.html">En savoir plus →</a>
+          </div>
+        </div>
+        <ul class="presta-items fade-up">
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-leaf service-icon"></i></div>
+            <div>
+              <h4>Entretien des Espaces Verts</h4>
+              <p>Tonte, taille de haies, désherbage, nettoyage de terrasses et allées. Aménagement paysager léger sur mesure.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-broom service-icon"></i></div>
+            <div>
+              <h4>Nettoyage de Locaux</h4>
+              <p>Entretien régulier de votre domicile (fréquence au choix). Nettoyage complet après travaux ou rénovations. Grand nettoyage saisonnier ou de printemps.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-hammer service-icon"></i></div>
+            <div>
+              <h4>Travaux de Finitions</h4>
+              <p>Peinture intérieure et extérieure. Pose de revêtements sol et muraux. Petits travaux de rénovation de pièces.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-boxes service-icon"></i></div>
+            <div>
+              <h4>Manutention & Débarras</h4>
+              <p>Aide au transport et déplacement de meubles. Débarras complet de maisons, caves, greniers. Tri et enlèvement des objets encombrants.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Collectivités -->
+      <div class="presta-panel" id="panel-collectivites">
+        <div class="presta-info fade-up">
+          <div class="tag">Pour les collectivités</div>
+          <h2 class="section-title">Partenaire de vos territoires.</h2>
+          <p>Mairies, CCAS, associations locales — l'AIPH intervient pour l'entretien de vos espaces publics, le nettoyage de vos locaux et l'aide au développement de vos actions sociales.</p>
+          <p>Nous sommes une structure conventionnée, ce qui facilite vos démarches administratives et vous garantit un interlocuteur de confiance.</p>
+          <div class="presta-highlight">
+            <h3>Structure conventionnée</h3>
+            <p>En tant qu'Association Intermédiaire, nous pouvons répondre à vos marchés publics simplifiés et vous proposer des devis adaptés.</p>
+            <a class="btn" href="contact.html">Obtenir un devis →</a>
+          </div>
+        </div>
+        <ul class="presta-items fade-up">
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-leaf service-icon"></i></div>
+            <div>
+              <h4>Entretien Espaces Publics</h4>
+              <p>Tonte et entretien de parcs, espaces verts communaux, aires de jeux.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-broom service-icon"></i></div>
+            <div>
+              <h4>Nettoyage de Bâtiments</h4>
+              <p>Entretien régulier de vos salles communales, écoles, médiathèques et autres bâtiments publics.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-child service-icon"></i></div>
+            <div>
+              <h4>Encadrement Périscolaire</h4>
+              <p>Aide aux devoirs, animations et encadrement d'enfants pour vos structures périscolaires.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-boxes service-icon"></i></div>
+            <div>
+              <h4>Manutention & Événements</h4>
+              <p>Mise en place, débarras et manutention pour vos événements et manifestations locales.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Entreprises -->
+      <div class="presta-panel" id="panel-entreprises">
+        <div class="presta-info fade-up">
+          <div class="tag">Pour les entreprises</div>
+          <h2 class="section-title">Externalisez sereinement.</h2>
+          <p>TPE, PME, artisans — confiez-nous vos tâches d'entretien et de nettoyage pour vous concentrer sur votre cœur de métier. Nous intervenons en dehors de vos horaires de travail sur demande.</p>
+          <p>En faisant appel à l'AIPH, vous participez aussi à l'insertion professionnelle locale, un engagement RSE concret et valorisable.</p>
+          <div class="presta-highlight">
+            <h3>Engagement RSE</h3>
+            <p>En choisissant l'AIPH, vous soutenez l'emploi local et l'insertion professionnelle dans le Pays Haut. Un partenariat économique et humain.</p>
+            <a class="btn" href="contact.html">Nous contacter →</a>
+          </div>
+        </div>
+        <ul class="presta-items fade-up">
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-leaf service-icon"></i></div>
+            <div>
+              <h4>Espaces Verts d'Entreprise</h4>
+              <p>Entretien de vos abords, parkings, jardins et espaces paysagers.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-broom service-icon"></i></div>
+            <div>
+              <h4>Nettoyage de Locaux Professionnels</h4>
+              <p>Bureaux, ateliers, showrooms — entretien régulier ou ponctuel selon vos besoins.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-hammer service-icon"></i></div>
+            <div>
+              <h4>Petits Travaux & Rénovation</h4>
+              <p>Peinture, revêtements, finitions légères pour vos locaux professionnels.</p>
+            </div>
+          </li>
+          <li class="presta-item">
+            <div class="presta-item-icon"><i class="fas fa-boxes service-icon"></i></div>
+            <div>
+              <h4>Manutention & Logistique</h4>
+              <p>Aide au déménagement, débarras de locaux, rangement d'entrepôts.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--stone);border-top:1px solid var(--border)">
+    <div class="container text-center">
+      <div class="tag">Demande de devis</div>
+      <h2 class="section-title" style="margin:0.75rem auto 1rem;max-width:550px">Un besoin ? Contactez-nous pour un devis gratuit.</h2>
+      <p class="lead" style="margin:0 auto 2rem;text-align:center">Nous étudions chaque demande individuellement et vous répondons dans les 24–48h ouvrées.</p>
+      <a class="btn btn-primary" href="contact.html">Demander un devis →</a>
+    </div>
+  </section>
+
+</div>
+<!-- END PAGE WRAP -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <img src="/home/emilien/Téléchargements/aiph/logo aiph blanc.png" alt="AIPH54 Logo" class="logo-img-footer">
+          </a>
+        <p>Association Intermédiaire du Pays Haut — Structure d'insertion par l'activité économique, au service des habitants de Meurthe-et-Moselle depuis 2010.</p>
+        <div class="footer-socials">
+          <button class="social-btn" href="https://www.facebook.com/Associationaiph/" title="Facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="social-btn" href="https://www.instagram.com/aiph.54/" title="Instagram"><i class="fab fa-instagram"></i></button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="aiph.html">L'AIPH</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="emploi.html">Emploi</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="prestations.html">Espaces Verts</a></li>
+          <li><a href="prestations.html">Nettoyage</a></li>
+          <li><a href="prestations.html">Petits Travaux</a></li>
+          <li><a href="prestations.html">Débarras</a></li>
+          <li><a href="prestations.html">Encadrement Enfants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a><i class="far fa-envelope" style="margin-right: 8px;"></i>aiph54@hotmail.fr</a></li>
+          <li><a><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>09 82 55 57 07</a></li>
+          <li><a><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Villers-la-Montagne</a></li>
+          <li><a>54920, Meurthe-et-Moselle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AIPH54 — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

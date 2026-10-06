@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIPH54 — Accueil</title>
+<link rel="icon" type="image/jpeg" href="/home/emilien/Téléchargements/aiph/images.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="/home/emilien/Téléchargements/aiph/logo aiph.png" alt="AIPH54 Logo" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="aiph.html">L'AIPH</a></li>
+    <li><a href="prestations.html">Prestations</a></li>
+    <li><a href="emploi.html">Emploi</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Accueil</a>
+  <a href="aiph.html" onclick="closeMobile()">L'AIPH</a>
+  <a href="prestations.html" onclick="closeMobile()">Prestations</a>
+  <a href="emploi.html" onclick="closeMobile()">Emploi</a>
+  <a href="contact.html" onclick="closeMobile()" style="color:var(--forest);font-weight:600">Contact</a>
+</div>
+
+<!-- ═══════════ PAGE WRAP ═══════════ -->
+<div class="page-wrap">
+
+  <!-- ── HERO ── -->
+  <section class="hero-simple">
+    <div class="container">
+      <div class="hero-simple-inner">
+        <div class="hero-simple-badge">
+          <i class="fas fa-hands-helping"></i>
+          Association Intermédiaire du Pays Haut
+        </div>
+        <h1 class="display-title">
+          Vos besoins,<br>
+          vos urgences,<br>
+          <em>nos solutions.</em>
+        </h1>
+        <p class="lead hero-simple-desc">
+          L'AIPH54 mobilise des femmes et des hommes engagés pour répondre concrètement à vos besoins, tout en favorisant le retour à l'emploi en Meurthe-et-Moselle.
+        </p>
+        <div class="hero-simple-actions">
+          <a class="btn btn-accent" href="contact.html">
+            <i class="fas fa-paper-plane"></i>&thinsp;Demander une intervention
+          </a>
+          <a class="btn btn-outline" href="emploi.html">
+            <i class="fas fa-briefcase"></i>&thinsp;Je cherche un emploi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <div class="tag">Nos services</div>
+      <h2 class="section-title" style="max-width:500px">
+        Des prestations utiles,<br>assurées par des professionnels.
+      </h2>
+      <div class="services-grid">
+        <a class="service-card fade-up" href="prestations.html" style="text-decoration:none">
+          <div class="service-num">01</div>
+          <span class="service-icon"><i class="fas fa-leaf icon"></i></span>
+          <div class="service-title">Espaces Verts</div>
+          <p class="service-desc">Entretien de jardins, tonte, taille, désherbage et aménagement paysager pour particuliers et collectivités.</p>
+          <span class="service-arrow">→</span>
+        </a>
+        <a class="service-card fade-up" href="prestations.html" style="text-decoration:none;transition-delay:0.08s">
+          <div class="service-num">02</div>
+          <span class="service-icon"><i class="fas fa-broom icon"></i></span>
+          <div class="service-title">Nettoyage</div>
+          <p class="service-desc">Nettoyage de locaux, bureaux, parties communes et logements. Entretien courant ou après travaux.</p>
+          <span class="service-arrow">→</span>
+        </a>
+        <a class="service-card fade-up" href="prestations.html" style="text-decoration:none;transition-delay:0.12s">
+          <div class="service-num">03</div>
+          <span class="service-icon"><i class="fas fa-hammer icon"></i></span>
+          <div class="service-title">Petits Travaux</div>
+          <p class="service-desc">Rénovation légère, peinture, revêtements sol et murs. Finitions soignées pour particuliers.</p>
+          <span class="service-arrow">→</span>
+        </a>
+        <a class="service-card fade-up" href="prestations.html" style="text-decoration:none;transition-delay:0.16s">
+          <div class="service-num">04</div>
+          <span class="service-icon"><i class="fas fa-boxes icon"></i></span>
+          <div class="service-title">Débarras</div>
+          <p class="service-desc">Aide au transport, déménagement et débarras complet de maisons, caves, greniers, garages.</p>
+          <span class="service-arrow">→</span>
+        </a>
+        <a class="service-card fade-up" href="prestations.html" style="text-decoration:none;transition-delay:0.2s">
+          <div class="service-num">05</div>
+          <span class="service-icon"><i class="fas fa-child icon"></i></span>
+          <div class="service-title">Encadrement Enfants</div>
+          <p class="service-desc">Activités périscolaires, aide aux devoirs et animations éducatives encadrées par nos salariés.</p>
+          <span class="service-arrow">→</span>
+        </a>
+        <div class="service-card fade-up" style="background:var(--forest-pale);cursor:default;transition-delay:0.24s">
+          <div class="service-num">→</div>
+          <span class="service-icon"><i class="fas fa-city icon"></i></span>
+          <div class="service-title" style="color:var(--forest)">Secteur du Pays Haut</div>
+          <p class="service-desc" style="color:var(--forest-mid)">De Mont-Saint-Martin à Longwy, en passant par Longuyon, Villers-la-Montagne et les communes avoisinantes.</p>
+          <a class="btn btn-primary" href="contact.html" style="margin-top:1rem;font-size:0.82rem;padding:0.6rem 1.2rem">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifesto -->
+  <div class="manifesto">
+    <div class="manifesto-inner">
+      <span class="manifesto-word">Insertion</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Emploi</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Solidarité</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Qualité</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">AIPH54</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Pays Haut</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Insertion</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Emploi</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Solidarité</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Qualité</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">AIPH54</span>
+      <span class="manifesto-word hi">·</span>
+      <span class="manifesto-word">Pays Haut</span>
+      <span class="manifesto-word hi">·</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-visual">
+          <div class="about-img-frame">
+            <img src="/home/emilien/Téléchargements/aiph/carte.png" alt="Carte d'intervention AIPH54 dans le Pays Haut">
+          </div>
+          <div class="about-badge">
+            <span class="about-badge-num">+25</span>
+            <span class="about-badge-text">communes<br>couvertes</span>
+          </div>
+        </div>
+        <div class="about-content fade-up">
+          <div class="tag">À propos</div>
+          <h2 class="section-title">Au cœur du Pays Haut,<br>une structure au service de l'humain</h2>
+          <p>
+            L'AIPH est une Association Intermédiaire conventionnée par l'État et le Département de Meurthe-et-Moselle.
+            Notre mission : faciliter l'insertion professionnelle de personnes en difficulté face à l'emploi,
+            en intervenant sur l'ensemble du Pays Haut.
+          </p>
+          <p>
+            De Mont-Saint-Martin à Longuyon, en passant par Longwy, Herserange, Saulnes, Villers-la-Montagne et bien d'autres communes,
+            nous agissons comme un véritable tremplin vers l'emploi durable pour nos salariés, tout en répondant aux besoins
+            des habitants et des collectivités du territoire.
+          </p>
+          <a class="btn btn-outline" href="aiph.html" style="margin-top:2rem">En savoir plus sur l'AIPH →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div style="background:var(--ink);border-radius:24px;padding:4rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-1em;right:-0.1em;font-family:'Playfair Display',serif;font-size:12rem;font-weight:900;color:rgba(255,255,255,0.025);line-height:1;user-select:none;pointer-events:none">✓</div>
+        <div style="position:relative;z-index:1">
+          <div class="tag" style="background:rgba(255,255,255,0.1);color:rgba(250,248,244,0.7)">Recrutement</div>
+          <h2 class="section-title" style="color:var(--cream);margin:0.75rem 0 1rem">Vous cherchez une seconde chance professionnelle ?</h2>
+          <p class="lead" style="color:rgba(250,248,244,0.55);max-width:480px">L'AIPH recrute en continu des personnes motivées pour des missions variées sur le territoire du Pays Haut.</p>
+        </div>
+        <div style="flex-shrink:0;z-index:1;display:flex;flex-direction:column;gap:0.75rem;min-width:200px">
+          <a class="btn btn-accent" href="emploi.html">Voir les missions</a>
+          <a class="btn" href="contact.html" style="background:rgba(255,255,255,0.08);color:var(--cream);border:1px solid rgba(255,255,255,0.15)">Nous écrire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── RÉSEAUX SOCIAUX ── -->
+  <section class="section social-section">
+    <div class="container">
+      <div class="tag">Communauté</div>
+      <h2 class="section-title">Suivez notre actualité</h2>
+      <p class="lead" style="margin-top:0.75rem">
+        Rejoignez notre communauté pour découvrir en avant-première nos offres d'emploi,
+        nos interventions et nos événements.
+      </p>
+      <div class="social-duo">
+
+        <a href="https://www.facebook.com/Associationaiph/" target="_blank" rel="noopener" class="social-duo-card sc-fb">
+          <div class="social-duo-icon">
+            <i class="fab fa-facebook-f"></i>
+          </div>
+          <div class="social-duo-body">
+            <h3>Facebook</h3>
+            <p>Offres d'emploi, actualités du territoire et événements à venir</p>
+          </div>
+          <span class="social-duo-cta">Nous suivre →</span>
+        </a>
+
+        <a href="https://www.instagram.com/aiph.54/" target="_blank" rel="noopener" class="social-duo-card sc-ig">
+          <div class="social-duo-icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="social-duo-body">
+            <h3>Instagram</h3>
+            <p>Nos interventions et le quotidien de l'AIPH54 en images</p>
+          </div>
+          <span class="social-duo-cta">Nous suivre →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END PAGE WRAP -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+          <a class="nav-logo" href="index.html">
+            <img src="/home/emilien/Téléchargements/aiph/logo aiph blanc.png" alt="AIPH54 Logo" class="logo-img-footer">
+          </a>
+        <p>Association Intermédiaire du Pays Haut — Structure d'insertion par l'activité économique, au service des habitants de Meurthe-et-Moselle depuis 2010.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="https://www.facebook.com/Associationaiph/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-btn" href="https://www.instagram.com/aiph.54/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="aiph.html">L'AIPH</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="emploi.html">Emploi</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="prestations.html">Espaces Verts</a></li>
+          <li><a href="prestations.html">Nettoyage</a></li>
+          <li><a href="prestations.html">Petits Travaux</a></li>
+          <li><a href="prestations.html">Débarras</a></li>
+          <li><a href="prestations.html">Encadrement Enfants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a><i class="far fa-envelope" style="margin-right: 8px;"></i>aiph54@hotmail.fr</a></li>
+          <li><a><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>09 82 55 57 07</a></li>
+          <li><a><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Villers-la-Montagne</a></li>
+          <li><a>54920, Meurthe-et-Moselle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AIPH54 — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
