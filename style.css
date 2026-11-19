@@ -758,6 +758,62 @@ footer { background: var(--ink); color: var(--cream); padding: 4rem 0 2rem; }
 .mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; } .mt-4 { margin-top: 2rem; }
 .text-center { text-align: center; } .mb-sm { margin-bottom: 1rem; }
 
+
+/* Bloc vidéo de la page emploi */
+.emploi-video-card {
+  background: var(--ink);
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.emploi-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(63,69,81,0.16);
+}
+
+.emploi-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.emploi-video-topics {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.emploi-video-topics h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.45);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 680px) {
+  .emploi-video-card {
+    padding: 1.5rem;
+  }
+}
+
 /* ════════════════════════ TABLETTE ════════════════════════ */
 @media (max-width: 900px) {
   nav { padding: 0 1.25rem; }
