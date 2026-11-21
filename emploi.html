@@ -4,21 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIPH54 — Emploi & Recrutement</title>
+<meta name="description" content="Découvrez les parcours d'insertion et les missions de l'AIPH54 dans le Pays Haut. Contactez notre équipe pour connaître les possibilités et les conditions d'accès.">
 <link rel="icon" type="image/jpeg" href="images/images.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=DM+Sans:wght@300;400;500;600&amp;family=DM+Mono:wght@400&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=DM+Sans:wght@300;400;500;600&amp;family=DM+Mono:wght@400&amp;display=swap"></noscript>
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- Progress bar -->
 <div class="progress-bar" id="progress"></div>
 
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" aria-label="Navigation principale">
   <a class="nav-logo" href="index.html">
-    <img src="images/logo%20aiph.png" alt="AIPH54 Logo" class="logo-img">
+    <img src="images/logo_aiph.webp" alt="Logo AIPH54" width="1080" height="1080" class="logo-img" decoding="async">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
@@ -27,13 +33,13 @@
     <li><a href="emploi.html" class="active">Emploi</a></li>
     <li><a href="contact.html" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="burger" id="burger" aria-label="Menu">
+  <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-controls="mobileMenu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Navigation mobile">
   <a href="index.html" onclick="closeMobile()">Accueil</a>
   <a href="aiph.html" onclick="closeMobile()">L'AIPH</a>
   <a href="prestations.html" onclick="closeMobile()">Prestations</a>
@@ -42,17 +48,17 @@
 </div>
 
 <!-- ═══════════ PAGE WRAP ═══════════ -->
-<div class="page-wrap">
+<main class="page-wrap" id="contenu">
 
   <!-- Hero -->
   <div class="emploi-hero">
     <div class="container">
       <div class="tag">Recrutement</div>
       <h1 class="display-title" style="margin:1rem 0">
-        Nous recrutons<br>
-        <em>en continu.</em>
+        Donnez un nouvel élan<br>
+        <em>à votre parcours.</em>
       </h1>
-      <p class="lead">Rejoignez une équipe qui agit chaque jour pour soutenir ses salariés dans le dans le cadre d’un parcours d’insertion professionnelle dont l’objectif est l’accès à l’emploi durable. Ce parcours peut durer jusqu’à 24 mois.</p>
+      <p class="lead">L'AIPH propose des missions de travail et un accompagnement pour vous aider à reprendre une activité, à développer vos compétences et à préparer la suite de votre parcours professionnel. Le parcours d’insertion peut durer jusqu’à 24 mois.</p>
     </div>
   </div>
 
@@ -66,14 +72,14 @@
           <div class="tag">Conditions d'accès</div>
           <h2 class="section-title">Qui peut postuler ?</h2>
           <p style="color:var(--warm-gray);line-height:1.75">
-            N'hésitez pas à nous contacter pour faire le point — nous déterminerons ensemble la faisabilité d'un parcours.
+            Un premier échange avec notre équipe permet de présenter votre situation et de vérifier si un parcours d’insertion au sein de l’AIPH peut vous correspondre.
           </p>
 
           <!-- Card : postuler si -->
           <div class="emploi-conditions">
             <h3>Vous pouvez postuler si vous :</h3>
             <ul class="cond-list">
-              <li><div class="cond-check">✓</div>Êtes éloigné(e) de l'emploi depuis plus de 2 ans</li>
+              <li><div class="cond-check">✓</div>Êtes éloigné(e) de l’emploi depuis plus de deux ans</li>
               <li><div class="cond-check">✓</div>Êtes motivé(e) à reprendre une activité professionnelle</li>
             </ul>
           </div>
@@ -82,9 +88,9 @@
           <div style="background:var(--forest-pale);border:1px solid rgba(45,90,39,0.15);border-radius:16px;padding:1.75rem">
             <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:1rem">Ce que nous offrons</h3>
             <ul class="cond-list">
-              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Des missions variées pour monter en compétences</li>
-              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Un suivi personnalisé par un référent emploi</li>
-              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Une attestation d'expérience valorisable</li>
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Des missions variées pour développer vos compétences</li>
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Un accompagnement personnalisé par un référent emploi</li>
+              <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Une expérience et des compétences à valoriser dans votre parcours</li>
               <li><div class="cond-check" style="background:var(--forest-mid)">✓</div>Un tremplin vers un emploi durable</li>
             </ul>
           </div>
@@ -104,17 +110,15 @@
                 </h3>
             
                 <p style="font-size:0.875rem;opacity:0.6;line-height:1.65;margin-bottom:1.5rem">
-                  Notre équipe vous présente l'association, les missions disponibles et le parcours d'accompagnement que nous proposons.
+                  Découvrez l’association, les types de missions qui peuvent être proposés et l’accompagnement assuré tout au long du parcours.
                 </p>
             
-                <div class="emploi-video-frame">
-                  <iframe
-                    loading="lazy"
-                    src="https://www.canva.com/design/DAEu3Gf3qZU/watch?embed"
-                    title="Présentation de l'AIPH"
-                    scrolling="no"
-                    allowfullscreen>
-                  </iframe>
+                <div class="emploi-video-frame" data-video-src="https://www.canva.com/design/DAEu3Gf3qZU/watch?embed">
+                  <button class="emploi-video-launch" type="button" aria-label="Charger la vidéo de présentation de l’AIPH">
+                    <span class="emploi-video-play" aria-hidden="true"></span>
+                    <span class="emploi-video-launch-label">Lire la vidéo de présentation</span>
+                    <span class="emploi-video-launch-note">La vidéo sera chargée à l’ouverture</span>
+                  </button>
                 </div>
               </div>
             
@@ -130,11 +134,11 @@
                   </li>
                   <li style="color:rgba(250,248,244,0.8)">
                     <div class="cond-check" style="background:var(--forest-mid)">✓</div>
-                    Les types de postes proposés aux salariés
+                    Les activités et missions proposées par l’AIPH
                   </li>
                   <li style="color:rgba(250,248,244,0.8)">
                     <div class="cond-check" style="background:var(--forest-mid)">✓</div>
-                    Le parcours d'accompagnement sur 2 ans
+                    Les étapes de l’accompagnement vers l’emploi durable
                   </li>
                 </ul>
               </div>
@@ -150,22 +154,22 @@
   <section class="section" style="background:var(--stone);border-top:1px solid var(--border)">
     <div class="container">
       <div class="tag">Missions proposées</div>
-      <h2 class="section-title" style="margin-bottom:0.5rem">Postes disponibles</h2>
-      <p class="lead" style="margin-bottom:0">Nos missions évoluent régulièrement. Contactez-nous pour la liste complète actualisée.</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem">Exemples de missions</h2>
+      <p class="lead" style="margin-bottom:0">Les missions varient selon les besoins du territoire et les demandes de nos clients. Les exemples ci-dessous présentent des activités possibles et ne garantissent pas l’existence d’un poste vacant. Contactez-nous pour connaître les possibilités au moment de votre demande.</p>
       <div class="jobs-grid">
         <div class="job-card fade-up">
           <span class="job-type">Espaces Verts</span>
           <h3>Ouvrier des Espaces Verts</h3>
-          <p>Réalisation de travaux d'entretien des espaces verts : tonte, débroussaillage, soufflage et entretien des extérieurs.</p>
+          <p>Participer à l’entretien des espaces extérieurs : tonte, débroussaillage, soufflage et nettoyage des abords.</p>
           <div class="job-footer">
-            <span>Temps partiel / modulable</span>
+            <span>Modalités selon la mission</span>
             <a class="job-apply" href="contact.html">Postuler →</a>
           </div>
         </div>
         <div class="job-card fade-up" style="transition-delay:0.06s">
           <span class="job-type">Nettoyage</span>
           <h3>Agent de Nettoyage</h3>
-          <p>Réalisation de travaux de nettoyage et d'entretien des locaux : dépoussiérage, lavage des sols, désinfection des surfaces et maintien de la propreté des espaces.</p>
+          <p>Contribuer à l’entretien des locaux : dépoussiérage, nettoyage des sols et des surfaces, et maintien de la propreté des espaces.</p>
           <div class="job-footer">
             <span>Temps partiel / modulable</span>
             <a class="job-apply" href="contact.html">Postuler →</a>
@@ -174,7 +178,7 @@
         <div class="job-card fade-up" style="transition-delay:0.12s">
           <span class="job-type">Manutention</span>
           <h3>Manœuvre Manutention</h3>
-          <p>Réalisation de travaux de manutention : déplacement, chargement, déchargement et rangement de marchandises et de matériel.</p>
+          <p>Aider au déplacement, au chargement, au déchargement et au rangement de marchandises ou de matériel.</p>
           <div class="job-footer">
             <span>Temps partiel / modulable</span>
             <a class="job-apply" href="contact.html">Postuler →</a>
@@ -182,8 +186,8 @@
         </div>
         <div class="job-card fade-up" style="background:var(--forest);border-color:var(--forest);cursor:default;transition-delay:0.3s">
           <span class="job-type" style="background:rgba(255,255,255,0.15);color:rgba(250,248,244,0.8)">Candidature spontanée</span>
-          <h3 style="color:var(--cream)">Votre profil ne correspond pas ?</h3>
-          <p style="color:rgba(250,248,244,0.65)">Contactez-nous quand même. Nous étudions chaque situation individuellement et pouvons créer des opportunités adaptées.</p>
+          <h3 style="color:var(--cream)">Parlons de votre projet</h3>
+          <p style="color:rgba(250,248,244,0.65)">Même si votre expérience ne correspond pas exactement aux exemples présentés, contactez-nous. Nous pourrons échanger sur votre situation et les possibilités d’accompagnement.</p>
           <div class="job-footer" style="border-top-color:rgba(255,255,255,0.15)">
             <span style="color:rgba(250,248,244,0.5)">Toute l'année</span>
             <a class="job-apply" style="color:var(--cream)" href="contact.html">Écrire →</a>
@@ -198,8 +202,8 @@
     <div class="container">
       <div style="background:var(--forest-pale);border:1px solid rgba(45,90,39,0.15);border-radius:24px;padding:3.5rem;text-align:center">
         <div class="tag">Candidature</div>
-        <h2 class="section-title" style="margin:0.75rem auto 1rem;max-width:500px">Prêt à rejoindre l'équipe ?</h2>
-        <p class="lead" style="margin:0 auto 2rem;text-align:center">Envoyez-nous votre candidature par e-mail ou via le formulaire de contact. Notre équipe vous répondra rapidement.</p>
+        <h2 class="section-title" style="margin:0.75rem auto 1rem;max-width:500px">Parlons de votre projet professionnel.</h2>
+        <p class="lead" style="margin:0 auto 2rem;text-align:center">Contactez-nous par e-mail ou via le formulaire pour présenter votre situation. Notre équipe vous renseignera sur les possibilités et les prochaines étapes.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
           <a class="btn btn-primary" href="contact.html">Candidater maintenant →</a>
           <a class="btn btn-outline" href="aiph.html">En savoir plus sur l'AIPH</a>
@@ -208,7 +212,7 @@
     </div>
   </section>
 
-</div>
+</main>
 <!-- END PAGE WRAP -->
 
 <!-- FOOTER -->
@@ -217,7 +221,7 @@
     <div class="footer-top">
       <div class="footer-brand">
           <a class="nav-logo" href="index.html">
-            <img src="images/logo%20aiph%20blanc.png" alt="AIPH54 Logo" class="logo-img-footer">
+            <img src="images/logo_aiph_blanc.webp" alt="Logo AIPH54" width="1043" height="570" class="logo-img-footer" decoding="async">
           </a>
         <p>Association Intermédiaire du Pays Haut — Structure d'insertion par l'activité économique, au service des habitants de Meurthe-et-Moselle depuis 2010.</p>
         <div class="footer-socials">
@@ -226,7 +230,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <p class="footer-heading">Navigation</p>
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="aiph.html">L'AIPH</a></li>
@@ -236,7 +240,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Prestations</h4>
+        <p class="footer-heading">Prestations</p>
         <ul>
           <li><a href="prestations.html">Espaces Verts</a></li>
           <li><a href="prestations.html">Nettoyage</a></li>
@@ -246,7 +250,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <p class="footer-heading">Contact</p>
         <ul>
           <li><a><i class="far fa-envelope" style="margin-right: 8px;"></i>aiph54@hotmail.fr</a></li>
           <li><a><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>09 82 55 57 07</a></li>
@@ -261,6 +265,6 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>
