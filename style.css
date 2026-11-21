@@ -992,22 +992,22 @@ footer { background: var(--ink); color: var(--cream); padding: 4rem 0 2rem; }
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-.fa-hands-helping::before { content: "\\f4c4"; }
-.fa-paper-plane::before { content: "\\f1d8"; }
-.fa-briefcase::before { content: "\\f0b1"; }
-.fa-leaf::before { content: "\\f06c"; }
-.fa-broom::before { content: "\\f51a"; }
-.fa-hammer::before { content: "\\f6e3"; }
-.fa-boxes::before { content: "\\f468"; }
-.fa-child::before { content: "\\f1ae"; }
-.fa-city::before { content: "\\f64f"; }
-.fa-facebook-f::before { content: "\\f39e"; }
-.fa-instagram::before { content: "\\f16d"; }
-.fa-envelope::before { content: "\\f0e0"; }
-.fa-phone-alt::before { content: "\\f879"; }
-.fa-map-marker-alt::before { content: "\\f3c5"; }
-.fa-handshake::before { content: "\\f2b5"; }
-.fa-medal::before { content: "\\f5a2"; }
-.fa-map::before { content: "\\f279"; }
-.fa-clock::before { content: "\\f017"; }
-.fa-check::before { content: "\\f00c"; }
+.fa-hands-helping::before { content: "\f4c4"; }
+.fa-paper-plane::before { content: "\f1d8"; }
+.fa-briefcase::before { content: "\f0b1"; }
+.fa-leaf::before { content: "\f06c"; }
+.fa-broom::before { content: "\f51a"; }
+.fa-hammer::before { content: "\f6e3"; }
+.fa-boxes::before { content: "\f468"; }
+.fa-child::before { content: "\f1ae"; }
+.fa-city::before { content: "\f64f"; }
+.fa-facebook-f::before { content: "\f39e"; }
+.fa-instagram::before { content: "\f16d"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-phone-alt::before { content: "\f879"; }
+.fa-map-marker-alt::before { content: "\f3c5"; }
+.fa-handshake::before { content: "\f2b5"; }
+.fa-medal::before { content: "\f5a2"; }
+.fa-map::before { content: "\f279"; }
+.fa-clock::before { content: "\f017"; }
+.fa-check::before { content: "\f00c"; }
