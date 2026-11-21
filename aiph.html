@@ -14,7 +14,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=DM+Sans:wght@300;400;500;600&amp;family=DM+Mono:wght@400&amp;display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="aiph-page">
 <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- Progress bar -->
@@ -74,25 +74,33 @@
           <p>Nous sommes une Association Intermédiaire, c'est-à-dire une structure conventionnée par l'État et le Département de Meurthe-et-Moselle, ayant pour objet l'embauche des personnes sans emploi, rencontrant des difficultés sociales et professionnelles particulières, en vue de faciliter leur insertion professionnelle en les mettant à titre onéreux à disposition de personnes physiques ou de personnes morales.</p>
           <p>Nous proposons des activités utiles à la collectivité : nos missions permettent de (re)prendre pied dans le milieu du travail, et de travailler sur leur projet professionnel pour trouver un emploi durable.</p>
         </div>
-        <div class="timeline fade-up">
+        <div class="timeline history-timeline fade-up" id="historyTimeline">
+          <svg class="history-rail" id="historyRail" aria-hidden="true" focusable="false">
+            <path class="history-rail-base" id="historyRailBase" d=""></path>
+            <path class="history-rail-progress" id="historyRailProgress" d=""></path>
+          </svg>
           <div class="tag">Notre histoire</div>
           <div style="height:0.5rem"></div>
           <div class="timeline-item">
+            <span class="history-marker" aria-hidden="true"></span>
             <div class="timeline-date">Fondation</div>
             <h3>Création de l'AIPH</h3>
             <p>Le 15 septembre 2010 marque la naissance de l'association, avec la volonté d'agir concrètement en faveur de l'emploi et de l'accompagnement des personnes.</p>
           </div>
           <div class="timeline-item">
+            <span class="history-marker" aria-hidden="true"></span>
             <div class="timeline-date">Premier chantier</div>
             <h3>Lancement des activités</h3>
             <p>Le 18 avril 2011, l'association réalise son premier chantier et débute ses missions sur le terrain.</p>
           </div>
           <div class="timeline-item">
+            <span class="history-marker" aria-hidden="true"></span>
             <div class="timeline-date">15 ans d'engagement</div>
             <h3>+29 000 missions réalisées</h3>
             <p>En 15 ans, 429 231 heures de travail ont été réalisées grâce à la confiance de 2 605 clients solidaires.</p>
           </div>
           <div class="timeline-item">
+            <span class="history-marker" aria-hidden="true"></span>
             <div class="timeline-date">Aujourd'hui</div>
             <h3>+1 200 personnes accompagnées</h3>
             <p>Depuis sa création, l'association a accompagné 1 274 personnes dans leur parcours et poursuit chaque jour son engagement sur le terrain.</p>
@@ -124,6 +132,35 @@
           <span class="team-value-icon"><i class="fas fa-medal icon-aiph"></i></span>
           <h3>Qualité</h3>
           <p>Nous nous engageons à fournir des services professionnels répondant aux attentes de nos clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis Google Maps -->
+  <section class="section google-reviews-section" id="avis">
+    <div class="container">
+      <div class="text-center">
+        <div class="tag">Avis Google Maps</div>
+        <h2 class="section-title" style="margin-top:0.75rem">Ils sont passés par là</h2>
+        <p class="lead google-reviews-intro">Les retours de personnes qui ont fait appel aux services de l'AIPH.</p>
+      </div>
+      <div class="google-review-stage fade-up">
+        <div class="google-review-source">
+          <span class="google-review-mark" aria-hidden="true">G</span>
+          <span>Avis publiés sur Google Maps</span>
+        </div>
+        <article class="google-review-card" id="googleReviewCard" aria-live="polite" aria-atomic="true">
+          <blockquote class="google-review-quote">« J’ai fait appel aux services de AIPH pour un enlèvement à destination de la déchèterie. Je les ai appelés ce matin à 8 h et ils étaient là une heure plus tard ! L’équipe est extrêmement réactive et les collaborateurs sont sympathiques et compétents. Je recommande ! »</blockquote>
+          <div class="google-review-footer">
+            <div class="google-review-person"><strong>Abdelhamid Drif</strong><span>Local Guide · 12 avis · 5 photos</span></div>
+            <div class="google-review-meta"><span class="google-review-new">Nouveau</span><time>Il y a 3 semaines</time></div>
+          </div>
+        </article>
+        <div class="google-review-nav">
+          <button class="google-review-btn" id="googleReviewPrev" type="button" aria-label="Avis précédent">←</button>
+          <span class="google-review-count"><strong id="googleReviewIndex">01</strong> / <span id="googleReviewTotal">02</span></span>
+          <button class="google-review-btn" id="googleReviewNext" type="button" aria-label="Avis suivant">→</button>
         </div>
       </div>
     </div>
