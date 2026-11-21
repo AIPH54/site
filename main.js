@@ -78,72 +78,75 @@ function observeFadeUps() {
 }
 observeFadeUps();
 
-// ── HISTOIRE AIPH : rail qui progresse au défilement ────
+// ── HISTOIRE AIPH : barre droite au centre, progression au scroll ──
 (function initHistoryRail() {
   const timeline = document.getElementById('historyTimeline');
   if (!timeline) return;
+
   const svg = document.getElementById('historyRail');
   const base = document.getElementById('historyRailBase');
   const progress = document.getElementById('historyRailProgress');
   const markers = Array.from(timeline.querySelectorAll('.history-marker'));
   if (!svg || !base || !progress || markers.length < 2) return;
 
-  let totalLength = 0, markerLengths = [], resizeTimer = null, scrollPending = false;
-  function segment(a, b) {
-    const y = (a.y + b.y) / 2;
-    const bend = Math.min(9, Math.max(4, Math.abs(b.y - a.y) * 0.035));
-    return ' C ' + (a.x + bend) + ' ' + y + ' ' + (b.x + bend) + ' ' + y + ' ' + b.x + ' ' + b.y;
-  }
-  function build() {
-    const box = timeline.getBoundingClientRect();
-    if (box.width < 10 || box.height < 10) return;
-    const points = markers.map(marker => {
-      const r = marker.getBoundingClientRect();
-      return { x: r.left - box.left + r.width / 2, y: r.top - box.top + r.height / 2 };
-    });
-    svg.setAttribute('viewBox', '0 0 ' + Math.max(1, box.width) + ' ' + Math.max(1, box.height));
-    let d = 'M ' + points[0].x + ' 0 L ' + points[0].x + ' ' + points[0].y;
-    for (let i = 1; i < points.length; i++) d += segment(points[i - 1], points[i]);
-    d += ' L ' + points[points.length - 1].x + ' ' + box.height;
-    base.setAttribute('d', d);
-    progress.setAttribute('d', d);
+  let totalLength = 0;
+  let markerPositions = [];
+  let resizeTimer = null;
+  let scrollPending = false;
+
+  function buildRail() {
+    const bounds = timeline.getBoundingClientRect();
+    if (bounds.width < 10 || bounds.height < 10) return;
+
+    // Une seule ligne droite au centre, quel que soit l'écran.
+    const centerX = bounds.width / 2;
+    const height = Math.max(1, bounds.height);
+    const path = 'M ' + centerX + ' 0 L ' + centerX + ' ' + height;
+
+    svg.setAttribute('viewBox', '0 0 ' + Math.max(1, bounds.width) + ' ' + height);
+    base.setAttribute('d', path);
+    progress.setAttribute('d', path);
     totalLength = progress.getTotalLength();
     progress.style.strokeDasharray = String(totalLength);
 
-    const temp = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    temp.style.display = 'none';
-    svg.appendChild(temp);
-    markerLengths = [0];
-    let partial = 'M ' + points[0].x + ' 0 L ' + points[0].x + ' ' + points[0].y;
-    for (let i = 1; i < points.length; i++) {
-      partial += segment(points[i - 1], points[i]);
-      temp.setAttribute('d', partial);
-      markerLengths.push(temp.getTotalLength());
-    }
-    svg.removeChild(temp);
-    update();
+    markerPositions = markers.map(marker => {
+      const rect = marker.getBoundingClientRect();
+      return rect.top - bounds.top + rect.height / 2;
+    });
+
+    updateRail();
   }
-  function update() {
+
+  function updateRail() {
     if (!totalLength) return;
-    const box = timeline.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const amount = Math.min(1, Math.max(0, (vh * 0.78 - box.top) / box.height));
+    const bounds = timeline.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const progressPoint = viewportHeight * 0.68 - bounds.top;
+    const amount = Math.min(1, Math.max(0, progressPoint / bounds.height));
+
     progress.style.strokeDashoffset = String(totalLength * (1 - amount));
-    markers.forEach((marker, i) => marker.classList.toggle('is-active', markerLengths[i] <= totalLength * amount + 1));
+    markers.forEach((marker, index) => {
+      marker.classList.toggle('is-active', markerPositions[index] <= totalLength * amount + 1);
+    });
   }
-  function schedule() {
+
+  function scheduleUpdate() {
     if (scrollPending) return;
     scrollPending = true;
-    requestAnimationFrame(() => { update(); scrollPending = false; });
+    window.requestAnimationFrame(() => {
+      updateRail();
+      scrollPending = false;
+    });
   }
-  window.addEventListener('scroll', schedule, { passive: true });
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(build, 160);
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(buildRail, 160);
   }, { passive: true });
-  window.addEventListener('load', build, { once: true });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
-  build();
+  window.addEventListener('load', buildRail, { once: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(buildRail);
+  buildRail();
 })();
 
 // ── AVIS GOOGLE MAPS : navigation des témoignages ────────
