@@ -1,30 +1,75 @@
 // ── PROGRESS BAR ────────────────────────────────────────
-window.addEventListener('scroll', () => {
-  const bar = document.getElementById('progress');
-  if (!bar) return;
-  const scrolled = window.scrollY;
-  const total = document.body.scrollHeight - window.innerHeight;
-  bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
-
-  // Nav shadow
-  const nav = document.getElementById('nav');
-  if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.06)' : 'none';
-});
+let scrollUpdatePending = false;
+function updateScrollUI() {
+  if (scrollUpdatePending) return;
+  scrollUpdatePending = true;
+  window.requestAnimationFrame(() => {
+    const bar = document.getElementById('progress');
+    const nav = document.getElementById('nav');
+    const scrollY = window.scrollY;
+    if (bar) {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (scrollY / total) * 100 : 0) + '%';
+    }
+    if (nav) nav.style.boxShadow = scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.06)' : 'none';
+    scrollUpdatePending = false;
+  });
+}
+window.addEventListener('scroll', updateScrollUI, { passive: true });
 
 // ── BURGER ──────────────────────────────────────────────
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 if (burger && mobileMenu) {
-  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  burger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
 }
-function closeMobile() { if (mobileMenu) mobileMenu.classList.remove('open'); }
+function closeMobile() {
+  if (mobileMenu) mobileMenu.classList.remove('open');
+  if (burger) {
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+}
+
+// ── VIDÉO EMPLOI : chargement à la demande ──────────────
+// Le lecteur Canva n'est chargé qu'après une action volontaire du visiteur.
+document.querySelectorAll('.emploi-video-launch').forEach(button => {
+  button.addEventListener('click', () => {
+    const frame = button.closest('.emploi-video-frame');
+    const source = frame && frame.dataset.videoSrc;
+    if (!frame || !source) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = source;
+    iframe.title = "Présentation vidéo de l'AIPH";
+    iframe.loading = 'lazy';
+    iframe.allow = 'fullscreen; autoplay';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.replaceChildren(iframe);
+  });
+});
 
 // ── FADE-UP OBSERVER ────────────────────────────────────
 function observeFadeUps() {
+  const elements = document.querySelectorAll('.fade-up');
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('visible'));
+    return;
+  }
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  elements.forEach(el => obs.observe(el));
 }
 observeFadeUps();
 
