@@ -1012,3 +1012,108 @@ footer { background: var(--ink); color: var(--cream); padding: 4rem 0 2rem; }
 .fa-map::before { content: "\f279"; }
 .fa-clock::before { content: "\f017"; }
 .fa-check::before { content: "\f00c"; }
+
+
+/* ── AIPH : navigation effet verre dépoli (liquid glass) ── */
+.aiph-page nav {
+  background: rgba(250,248,244,0.76);
+  -webkit-backdrop-filter: blur(18px) saturate(165%);
+  backdrop-filter: blur(18px) saturate(165%);
+  border-bottom: 1px solid rgba(216,211,200,0.48);
+  box-shadow: 0 8px 28px rgba(26,26,24,0.045);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.aiph-page nav.is-scrolled {
+  background: rgba(250,248,244,0.91);
+  border-bottom-color: rgba(216,211,200,0.78);
+  box-shadow: 0 8px 26px rgba(26,26,24,0.085);
+}
+
+/* ── Histoire de l'AIPH : rail animé au défilement ── */
+.history-timeline {
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-top: 2rem; padding: 1.75rem 1.5rem 1.25rem 3.65rem;
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;
+  background: var(--forest); color: var(--cream);
+}
+.history-timeline::before { display: none; }
+.history-timeline .tag { position: relative; z-index: 1; color: var(--forest); background: var(--forest-pale); }
+.history-rail { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.history-rail path { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.history-rail-base { stroke: rgba(250,248,244,0.24); }
+.history-rail-progress { stroke: #f0a477; }
+.history-timeline .timeline-item { position: relative; z-index: 1; padding-bottom: 2rem; }
+.history-timeline .timeline-item:last-child { padding-bottom: 0; }
+.history-timeline .timeline-item::before { display: none; }
+.history-marker {
+  position: absolute; left: -3.1rem; top: 0.24rem; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--forest); border: 2px solid rgba(250,248,244,0.48);
+  box-shadow: 0 0 0 3px rgba(250,248,244,0.08);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+.history-marker.is-active {
+  background: #f0a477; border-color: #f0a477;
+  box-shadow: 0 0 0 5px rgba(240,164,119,0.2); transform: scale(1.08);
+}
+.history-timeline .timeline-date { color: #f0b18d; }
+.history-timeline .timeline-item h3 { color: var(--cream); }
+.history-timeline .timeline-item p { color: rgba(250,248,244,0.86); }
+
+/* ── Avis Google Maps : témoignages navigables ── */
+.google-reviews-section { background: var(--stone); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.google-reviews-intro { margin: 1rem auto 0; text-align: center; }
+.google-review-stage { max-width: 860px; margin: 2.5rem auto 0; }
+.google-review-source {
+  display: flex; align-items: center; gap: 0.65rem; margin: 0 0 1rem 0.25rem;
+  color: var(--warm-gray); font-family: 'DM Mono', monospace; font-size: 0.72rem;
+  letter-spacing: 0.07em; text-transform: uppercase;
+}
+.google-review-mark {
+  display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream); border: 1px solid var(--border); color: var(--forest);
+  font-family: Arial, sans-serif; font-size: 1rem; font-weight: 700;
+}
+.google-review-card {
+  min-height: 280px; display: flex; flex-direction: column; justify-content: space-between;
+  padding: clamp(1.5rem,4vw,3rem); background: var(--cream);
+  border: 1px solid var(--border); border-radius: 20px;
+  box-shadow: 0 12px 34px rgba(26,26,24,0.045);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.google-review-card.is-changing { opacity: 0.35; transform: translateY(8px); }
+.google-review-quote {
+  color: var(--ink); font-family: 'Playfair Display', serif;
+  font-size: clamp(1.25rem,2.5vw,1.85rem); font-style: italic;
+  line-height: 1.48; letter-spacing: -0.012em;
+}
+.google-review-footer {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem;
+  flex-wrap: wrap; margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--border);
+}
+.google-review-person { display: flex; flex-direction: column; gap: 0.2rem; }
+.google-review-person strong { color: var(--ink); font-family: 'Playfair Display', serif; font-size: 1.08rem; }
+.google-review-person span, .google-review-meta time { color: var(--warm-gray); font-size: 0.8rem; }
+.google-review-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.google-review-new {
+  padding: 0.2rem 0.6rem; border-radius: 2rem; background: var(--forest-pale); color: var(--forest);
+  font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.google-review-nav { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: 1.5rem; }
+.google-review-btn {
+  display: inline-grid; place-items: center; width: 44px; height: 44px;
+  border: 1px solid var(--border); border-radius: 50%; background: var(--cream); color: var(--ink);
+  font-size: 1.2rem; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.google-review-btn:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); transform: translateY(-1px); }
+.google-review-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.google-review-count { min-width: 3.5rem; color: var(--warm-gray); font-family: 'DM Mono', monospace; font-size: 0.78rem; text-align: center; }
+.google-review-count strong { color: var(--ink); }
+
+@media (max-width: 900px) { .history-timeline { padding: 1.5rem 1.25rem 1.25rem 3.5rem; } }
+@media (max-width: 520px) {
+  .history-timeline { padding: 1.35rem 1rem 1.1rem 3.25rem; }
+  .history-marker { left: -2.78rem; }
+  .google-review-card { min-height: 0; }
+  .google-review-footer { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { .history-marker, .google-review-card { transition: none; } }
