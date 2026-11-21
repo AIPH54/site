@@ -54,6 +54,26 @@ document.querySelectorAll('.emploi-video-launch').forEach(button => {
   });
 });
 
+// ── CONTACT MAP : chargement à la demande ───────────────
+// Les scripts de Google Maps ne sont pas chargés avant un clic volontaire.
+document.querySelectorAll('.contact-map-launch').forEach(button => {
+  button.addEventListener('click', () => {
+    const container = button.closest('.contact-map-placeholder');
+    const source = container && container.dataset.mapSrc;
+    if (!container || !source) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = source;
+    iframe.title = "Carte Google Maps - Villers-la-Montagne";
+    iframe.width = "420";
+    iframe.height = "280";
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.allowFullscreen = true;
+    container.replaceChildren(iframe);
+  });
+});
+
 // ── FADE-UP OBSERVER ────────────────────────────────────
 function observeFadeUps() {
   const elements = document.querySelectorAll('.fade-up');
