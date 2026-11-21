@@ -958,7 +958,8 @@ footer { background: var(--ink); color: var(--cream); padding: 4rem 0 2rem; }
   .contact-item { gap: 0.75rem; }
 }
 
-/* Affiche les icônes avec une police de remplacement sans bloquer le texte. */\n@font-face {
+/* Affiche les icônes avec une police de remplacement sans bloquer le texte. */
+@font-face {
   font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 900;
