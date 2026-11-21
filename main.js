@@ -11,7 +11,12 @@ function updateScrollUI() {
       const total = document.documentElement.scrollHeight - window.innerHeight;
       bar.style.width = (total > 0 ? (scrollY / total) * 100 : 0) + '%';
     }
-    if (nav) nav.style.boxShadow = scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.06)' : 'none';
+    if (nav) {
+      nav.classList.toggle('is-scrolled', scrollY > 12);
+      if (!document.body.classList.contains('aiph-page')) {
+        nav.style.boxShadow = scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.06)' : 'none';
+      }
+    }
     scrollUpdatePending = false;
   });
 }
@@ -54,26 +59,6 @@ document.querySelectorAll('.emploi-video-launch').forEach(button => {
   });
 });
 
-// ── CONTACT MAP : chargement à la demande ───────────────
-// Les scripts de Google Maps ne sont pas chargés avant un clic volontaire.
-document.querySelectorAll('.contact-map-launch').forEach(button => {
-  button.addEventListener('click', () => {
-    const container = button.closest('.contact-map-placeholder');
-    const source = container && container.dataset.mapSrc;
-    if (!container || !source) return;
-
-    const iframe = document.createElement('iframe');
-    iframe.src = source;
-    iframe.title = "Carte Google Maps - Villers-la-Montagne";
-    iframe.width = "420";
-    iframe.height = "280";
-    iframe.loading = "lazy";
-    iframe.referrerPolicy = "no-referrer-when-downgrade";
-    iframe.allowFullscreen = true;
-    container.replaceChildren(iframe);
-  });
-});
-
 // ── FADE-UP OBSERVER ────────────────────────────────────
 function observeFadeUps() {
   const elements = document.querySelectorAll('.fade-up');
@@ -92,6 +77,134 @@ function observeFadeUps() {
   elements.forEach(el => obs.observe(el));
 }
 observeFadeUps();
+
+// ── HISTOIRE AIPH : rail qui progresse au défilement ────
+(function initHistoryRail() {
+  const timeline = document.getElementById('historyTimeline');
+  if (!timeline) return;
+  const svg = document.getElementById('historyRail');
+  const base = document.getElementById('historyRailBase');
+  const progress = document.getElementById('historyRailProgress');
+  const markers = Array.from(timeline.querySelectorAll('.history-marker'));
+  if (!svg || !base || !progress || markers.length < 2) return;
+
+  let totalLength = 0, markerLengths = [], resizeTimer = null, scrollPending = false;
+  function segment(a, b) {
+    const y = (a.y + b.y) / 2;
+    const bend = Math.min(9, Math.max(4, Math.abs(b.y - a.y) * 0.035));
+    return ' C ' + (a.x + bend) + ' ' + y + ' ' + (b.x + bend) + ' ' + y + ' ' + b.x + ' ' + b.y;
+  }
+  function build() {
+    const box = timeline.getBoundingClientRect();
+    if (box.width < 10 || box.height < 10) return;
+    const points = markers.map(marker => {
+      const r = marker.getBoundingClientRect();
+      return { x: r.left - box.left + r.width / 2, y: r.top - box.top + r.height / 2 };
+    });
+    svg.setAttribute('viewBox', '0 0 ' + Math.max(1, box.width) + ' ' + Math.max(1, box.height));
+    let d = 'M ' + points[0].x + ' 0 L ' + points[0].x + ' ' + points[0].y;
+    for (let i = 1; i < points.length; i++) d += segment(points[i - 1], points[i]);
+    d += ' L ' + points[points.length - 1].x + ' ' + box.height;
+    base.setAttribute('d', d);
+    progress.setAttribute('d', d);
+    totalLength = progress.getTotalLength();
+    progress.style.strokeDasharray = String(totalLength);
+
+    const temp = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    temp.style.display = 'none';
+    svg.appendChild(temp);
+    markerLengths = [0];
+    let partial = 'M ' + points[0].x + ' 0 L ' + points[0].x + ' ' + points[0].y;
+    for (let i = 1; i < points.length; i++) {
+      partial += segment(points[i - 1], points[i]);
+      temp.setAttribute('d', partial);
+      markerLengths.push(temp.getTotalLength());
+    }
+    svg.removeChild(temp);
+    update();
+  }
+  function update() {
+    if (!totalLength) return;
+    const box = timeline.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const amount = Math.min(1, Math.max(0, (vh * 0.78 - box.top) / box.height));
+    progress.style.strokeDashoffset = String(totalLength * (1 - amount));
+    markers.forEach((marker, i) => marker.classList.toggle('is-active', markerLengths[i] <= totalLength * amount + 1));
+  }
+  function schedule() {
+    if (scrollPending) return;
+    scrollPending = true;
+    requestAnimationFrame(() => { update(); scrollPending = false; });
+  }
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 160);
+  }, { passive: true });
+  window.addEventListener('load', build, { once: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+  build();
+})();
+
+// ── AVIS GOOGLE MAPS : navigation des témoignages ────────
+(function initGoogleReviews() {
+  const card = document.getElementById('googleReviewCard');
+  const prev = document.getElementById('googleReviewPrev');
+  const next = document.getElementById('googleReviewNext');
+  const index = document.getElementById('googleReviewIndex');
+  const total = document.getElementById('googleReviewTotal');
+  if (!card || !prev || !next || !index || !total) return;
+
+  const reviews = [
+    {
+      quote: "J’ai fait appel aux services de AIPH pour un enlèvement à destination de la déchèterie. Je les ai appelés ce matin à 8 h et ils étaient là une heure plus tard ! L’équipe est extrêmement réactive et les collaborateurs sont sympathiques et compétents. Je recommande !",
+      name: "Abdelhamid Drif", details: "Local Guide · 12 avis · 5 photos", date: "Il y a 3 semaines", isNew: true
+    },
+    {
+      quote: "Super satisfait de la prestation effectuée ce jour chez-moi. Personnel très sympathique et surtout très très consciencieux. Merci.",
+      name: "Guy Clement", details: "Local Guide · 16 avis · 3 photos", date: "Il y a 3 ans", isNew: false
+    }
+  ];
+  let current = 0;
+  total.textContent = String(reviews.length).padStart(2, '0');
+
+  function addText(parent, tag, className, value) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    el.textContent = value;
+    parent.appendChild(el);
+    return el;
+  }
+  function render() {
+    const review = reviews[current];
+    card.classList.add('is-changing');
+    window.setTimeout(() => {
+      card.replaceChildren();
+      const quote = addText(card, 'blockquote', 'google-review-quote', '« ' + review.quote + ' »');
+      quote.setAttribute('lang', 'fr');
+      const footer = document.createElement('div');
+      footer.className = 'google-review-footer';
+      const person = document.createElement('div');
+      person.className = 'google-review-person';
+      addText(person, 'strong', '', review.name);
+      addText(person, 'span', '', review.details);
+      const meta = document.createElement('div');
+      meta.className = 'google-review-meta';
+      if (review.isNew) addText(meta, 'span', 'google-review-new', 'Nouveau');
+      addText(meta, 'time', '', review.date);
+      footer.append(person, meta);
+      card.append(quote, footer);
+      index.textContent = String(current + 1).padStart(2, '0');
+      card.classList.remove('is-changing');
+    }, 160);
+  }
+  function move(direction) {
+    current = (current + direction + reviews.length) % reviews.length;
+    render();
+  }
+  prev.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+})();
 
 // ── PRESTA TABS (prestations.html only) ─────────────────
 document.querySelectorAll('.presta-tab').forEach(tab => {
