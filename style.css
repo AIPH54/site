@@ -1282,3 +1282,26 @@ footer { background: var(--ink); color: var(--cream); padding: 4rem 0 2rem; }
 @media (prefers-reduced-motion: reduce) {
   .history-section .history-marker { transition: none; }
 }
+
+
+/* ── Correctif frise : supprimer le cadre global et centrer les jalons ── */
+.history-section .history-timeline {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+  overflow: visible;
+}
+.history-section .history-marker {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0;
+  display: block;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+}
