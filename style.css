@@ -372,11 +372,17 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
   overflow: hidden;
 }
 .manifesto-inner {
-  display: flex; align-items: center;
-  gap: 4rem;
+  display: flex;
+  width: max-content;
   animation: marquee 20s linear infinite;
   white-space: nowrap;
-  width: max-content;
+}
+.manifesto-group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 4rem;
+  padding-right: 4rem;
 }
 .manifesto-word {
   font-family: 'Playfair Display', serif;
@@ -386,8 +392,8 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 }
 .manifesto-word.hi { color: rgba(250,248,244,0.9); }
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 /* ── ABOUT SPLIT ── */
