@@ -22,22 +22,45 @@ function updateScrollUI() {
 }
 window.addEventListener('scroll', updateScrollUI, { passive: true });
 
-// ── BURGER ──────────────────────────────────────────────
+// ── MENU MOBILE : ouverture, fermeture et interactions ──
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
+
+function setMobileMenuState(isOpen) {
+  if (!burger || !mobileMenu) return;
+  mobileMenu.classList.toggle('open', isOpen);
+  burger.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', String(isOpen));
+  burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  mobileMenu.inert = !isOpen;
+  document.body.classList.toggle('menu-open', isOpen);
+}
+
 if (burger && mobileMenu) {
+  setMobileMenuState(false);
+
   burger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', String(isOpen));
-    burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    setMobileMenuState(!mobileMenu.classList.contains('open'));
+  });
+
+  // Un clic/toucher en dehors du bouton et du panneau ferme le menu.
+  document.addEventListener('pointerdown', event => {
+    if (!mobileMenu.classList.contains('open')) return;
+    if (burger.contains(event.target) || mobileMenu.contains(event.target)) return;
+    closeMobile();
+  });
+
+  // Escape ferme le menu et rend le focus au bouton.
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !mobileMenu.classList.contains('open')) return;
+    closeMobile();
+    burger.focus();
   });
 }
+
 function closeMobile() {
-  if (mobileMenu) mobileMenu.classList.remove('open');
-  if (burger) {
-    burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Ouvrir le menu');
-  }
+  setMobileMenuState(false);
 }
 
 // ── VIDÉO EMPLOI : chargement à la demande ──────────────
