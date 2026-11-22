@@ -161,11 +161,11 @@ observeFadeUps();
   const reviews = [
     {
       quote: "J’ai fait appel aux services de AIPH pour un enlèvement à destination de la déchèterie. Je les ai appelés ce matin à 8 h et ils étaient là une heure plus tard ! L’équipe est extrêmement réactive et les collaborateurs sont sympathiques et compétents. Je recommande !",
-      name: "Abdelhamid Drif", details: "Local Guide · 12 avis · 5 photos", date: "Il y a 3 semaines", isNew: true
+      name: "Abdelhamid Drif", rating: 5
     },
     {
       quote: "Super satisfait de la prestation effectuée ce jour chez-moi. Personnel très sympathique et surtout très très consciencieux. Merci.",
-      name: "Guy Clement", details: "Local Guide · 16 avis · 3 photos", date: "Il y a 3 ans", isNew: false
+      name: "Guy Clement", rating: 5
     }
   ];
   let current = 0;
@@ -183,6 +183,9 @@ observeFadeUps();
     card.classList.add('is-changing');
     window.setTimeout(() => {
       card.replaceChildren();
+      const stars = addText(card, 'div', 'google-review-stars', '★'.repeat(review.rating));
+      stars.setAttribute('role', 'img');
+      stars.setAttribute('aria-label', review.rating + ' étoiles sur 5');
       const quote = addText(card, 'blockquote', 'google-review-quote', '« ' + review.quote + ' »');
       quote.setAttribute('lang', 'fr');
       const footer = document.createElement('div');
@@ -190,13 +193,8 @@ observeFadeUps();
       const person = document.createElement('div');
       person.className = 'google-review-person';
       addText(person, 'strong', '', review.name);
-      addText(person, 'span', '', review.details);
-      const meta = document.createElement('div');
-      meta.className = 'google-review-meta';
-      if (review.isNew) addText(meta, 'span', 'google-review-new', 'Nouveau');
-      addText(meta, 'time', '', review.date);
-      footer.append(person, meta);
-      card.append(quote, footer);
+      footer.append(person);
+      card.append(stars, quote, footer);
       index.textContent = String(current + 1).padStart(2, '0');
       card.classList.remove('is-changing');
     }, 160);
