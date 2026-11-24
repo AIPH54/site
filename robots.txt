@@ -1,4 +1,23 @@
+# Moteurs de recherche classiques
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Moteurs de recherche et de réponse IA
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Consultation declenchee par un utilisateur
+User-agent: Claude-User
+Allow: /
+
+# Sitemap du site
 Sitemap: https://aiph54.fr/sitemap.xml
