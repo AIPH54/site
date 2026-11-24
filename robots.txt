@@ -1,2 +1,4 @@
 User-agent: OAI-SearchBot
 Allow: /
+
+Sitemap: https://aiph54.fr/sitemap.xml
