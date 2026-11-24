@@ -19,5 +19,12 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+# Permettre les crawlers IA pour l'AEO
+User-agent: Bravebot
+Allow: /
+
 # Sitemap du site
 Sitemap: https://aiph54.fr/sitemap.xml
